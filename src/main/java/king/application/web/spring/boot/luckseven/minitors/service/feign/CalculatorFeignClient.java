@@ -5,10 +5,10 @@
  */
 package king.application.web.spring.boot.luckseven.minitors.service.feign;
 
-import king.application.web.spring.boot.luckseven.minitors.configuration.bean.Login;
 import king.application.web.spring.boot.luckseven.minitors.configuration.bean.Peridocial;
 import king.application.web.spring.boot.luckseven.minitors.configuration.bean.User;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -41,7 +41,14 @@ public interface CalculatorFeignClient {
     @RequestMapping("/calculator/show/login")
     public User login(@RequestParam("id") String id , @RequestParam("password") String password );
     
+    /**
+     * 由于 相对应的 user 才是 我们 输入 信息的 主要 信息体，因此 ， 我们要将 相对应的 信息 输入
+     * @param username
+     * @param password
+     * @param user
+     * @return 
+     */
     @RequestMapping("/calculator/insert/register")
-    public User register(@RequestParam("username") String username , @RequestParam("password") String password );
+    public User register(@RequestParam("username") String username , @RequestParam("password") String password ,@RequestBody User user);
     
 }

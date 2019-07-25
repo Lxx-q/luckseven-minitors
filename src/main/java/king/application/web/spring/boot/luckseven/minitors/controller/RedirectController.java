@@ -51,8 +51,6 @@ public class RedirectController {
         
         //之后 相对应的 Session 中 注册 相对应的 request
         
-        System.out.println(this.application.json(_user));
-        
         return _user != null ? this.view.redirect("/model/") : this.view.redirect("/model/login");
         
     }
@@ -63,7 +61,7 @@ public class RedirectController {
         //首先 ， 判断 相对应的 信息 是否 有错误
         
         //根据 目标 用户 信息 输入 ， 然后 我们 便可以 确定 相对应的 值 
-        User _user = this.calculator.register(user.getUsername(),login.getPassword());
+        User _user = this.calculator.register(user.getId(),login.getPassword() ,user);
         
         //倘若 结果 为 真 ， 那么 返回 到 相对应的 地址  , 个人 认为 真 则 返回 到 个人 中心 页（但是 现在没有， 错误
         //，则 返回 相对应的  原本的 地址 , 
