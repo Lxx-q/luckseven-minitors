@@ -19,7 +19,6 @@ function model_url(string){
 }
 
 
-/*
 function getParameter(key){
 
 	// 获取 相对应的 值
@@ -33,36 +32,6 @@ function getParameter(key){
     // 如果 为否  
   	return null;
 }
-*/
-//获取 相对应的 值
-function getParameter(variable)
-{
-       var query = window.location.href.toString().split("?")[1];//截取url中？后的字符串
-       
-       if( query == undefined ){
-       	 return undefined;
-       }
-
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       
-       return undefined;
-}
-
-
-function getQueryVariable(variable)
-{
-       var query = window.location.href.toString().split("?")[1];//截取url中？后的字符串
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
-}
 
 function requestText(header_tag , url_string){
 
@@ -73,20 +42,6 @@ function requestText(header_tag , url_string){
 		header_tag.append(data);
 	});
 }
-
-
-// 完成 相对应的 搜索页面功能
-/**
-
-	string : 相对应搜索的 关键字
-	limit : 一次输出的 大小
-	limit
-*/
-
-
-/*
-
-//目前 暂时 停止 ， 相对应的 功能
 
 
 // 用来得到 相对应的 文章页面
@@ -329,5 +284,3 @@ function drawArticleFW(item){
 		//输出 相对应的 信息 
 		return article_fw;
 	}
-
-	*/

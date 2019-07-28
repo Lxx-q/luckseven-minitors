@@ -38,7 +38,13 @@ $(document).ready(function(){
 	
 	//主页面的 信息
 
-	drawArticle("a1"); 	
+	// 获取 到 相对应 url 中的 string ， 
+
+	//倘若 该值 ， 为空 ， 就设置 默认的值 ， 进行 相对应的 查询
+
+	//进行 获取 相对应的 值 ， 倘若 输出 为空 ， 那么 
+	string = string != undefined? string : "a1";
+	drawArticle(string); 	
 	drawArticleMini();
 	drawArticleFw();
 
