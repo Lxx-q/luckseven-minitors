@@ -7,7 +7,6 @@ package king.application.web.spring.boot.luckseven.minitors.controller;
 
 import king.application.web.spring.boot.luckseven.minitors.configuration.bean.Peridocial;
 import king.application.web.spring.boot.luckseven.minitors.service.ViewService;
-import king.application.web.spring.boot.luckseven.minitors.service.feign.AssemblerFeignClient;
 import king.application.web.spring.boot.luckseven.minitors.service.feign.CalculatorFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +32,11 @@ public class ViewController {
     public Object index() {
         //从相对应的 application 的 信息 可以 获取 相对应的 信息
         return this.view.redirect(this.view.model("/index"));
+    }
+    
+    @RequestMapping("/another_index")
+    public Object another_index(){
+        return this.view.getViewPath(this, "_index");
     }
 
     //我们就简单的设计一个相对应的 page , 但是 ， 后期我们必须 见他们进行消除 ， 因为可能在各个场景中我们需要不同的加法
