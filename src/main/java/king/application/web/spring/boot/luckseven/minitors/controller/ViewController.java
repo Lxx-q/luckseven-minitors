@@ -102,7 +102,7 @@ public class ViewController {
     }
 
     @RequestMapping("single")
-    public Object single_id(String id) {
+    public Object single_id( String id ) {
 
         //我们目前 设计为 相对应的 设计 ， 
         //根据 id 的 值 进行 判断 ， 根据 id 的不同获取不同的 值 ， 当然 也会遇见 id 无的 页面 ， 那么 我们 应该跳转到 404 页面， 或者说

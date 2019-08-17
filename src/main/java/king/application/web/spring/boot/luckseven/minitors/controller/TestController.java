@@ -5,7 +5,6 @@
  */
 package king.application.web.spring.boot.luckseven.minitors.controller;
 
-import king.application.web.spring.boot.luckseven.minitors.configuration.bean.Login;
 import king.application.web.spring.boot.luckseven.minitors.service.ApplicationService;
 import king.application.web.spring.boot.luckseven.minitors.service.feign.CalculatorFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;

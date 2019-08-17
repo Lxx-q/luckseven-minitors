@@ -68,7 +68,8 @@ function requestText(header_tag , url_string){
 
 	var _url = url(url_string);
 
-	request(_url , {} , "text" , function(data){
+
+	requestByCache(_url , {} , "text" , function(data){
 		// 获取 相对应的 信息
 		header_tag.append(data);
 	});
