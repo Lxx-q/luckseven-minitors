@@ -6,8 +6,6 @@
 package king.application.web.spring.boot.luckseven.minitors.controller;
 
 import java.util.List;
-import king.application.web.spring.boot.luckseven.minitors.configuration.bean.Peridocial;
-import king.application.web.spring.boot.luckseven.minitors.configuration.bean.PeridocialBrief;
 import king.application.web.spring.boot.luckseven.minitors.service.RestTemplateService;
 import king.application.web.spring.boot.luckseven.minitors.service.UrlService;
 import king.application.web.spring.boot.luckseven.minitors.service.ViewService;
@@ -53,13 +51,5 @@ public class PageController {
         return new ModelAndView(this.view.getViewPath(this,"show"));
     }
 
-    @RequestMapping("list")
-    public Object show(Peridocial peridocial) {
-        MultiValueMap<String, Object> request = new LinkedMultiValueMap<>();
-        this.restTemplate.add(request,peridocial);
-        List<PeridocialBrief> peridocials = this.template.postForObject("http://localhost:8084/calculator/search/peridocial/brief", request, List.class);
-        System.out.println(peridocials);
-        return new ModelAndView(this.view.getViewPath(this,"list"),"peridocials",peridocials);
-    }
     
 }

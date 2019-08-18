@@ -25,10 +25,5 @@ public class TestController {
     @Autowired
     private ApplicationService application;
     
-    @RequestMapping("calculator")
-    public Object calculator(){
-        return this.calculator.test_hello();
-    }
-    
     
 }

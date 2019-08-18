@@ -5,7 +5,7 @@
  */
 package king.application.web.spring.boot.luckseven.minitors.controller;
 
-import king.application.web.spring.boot.luckseven.minitors.configuration.bean.Peridocial;
+import king.application.web.spring.boot.luckseven.minitors.configuration.bean.Article;
 import king.application.web.spring.boot.luckseven.minitors.service.ViewService;
 import king.application.web.spring.boot.luckseven.minitors.service.feign.CalculatorFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -114,12 +114,12 @@ public class ViewController {
             return this.view.redirect(this.view.model("/404"));
         }
 
-        Peridocial _peridocial = this.calculator.showPeridocial(id);
+        Article article = null;
         
-        if (_peridocial == null) {
-            //如果 该 peridocial 为 空 ， 那么 就会被 转移到404 页面
+        /*if (article == null) {
+            //如果 该 article 为 空 ， 那么 就会被 转移到404 页面
             return this.view.redirect(this.view.model("/404"));
-        }
+        }*/
         //倘若能成功 那么 就会返回相对应的 页面
         return this.view.getViewPath(this, "single");
     }
