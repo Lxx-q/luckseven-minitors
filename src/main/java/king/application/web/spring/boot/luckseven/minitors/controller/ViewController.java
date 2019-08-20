@@ -113,8 +113,11 @@ public class ViewController {
         if (id == null) {
             return this.view.redirect(this.view.model("/404"));
         }
-
-        Article article = null;
+        
+        //假设 ， 我们在这里设置 相对应
+        //在这里 ， 我们 暂时 先用 相对应的 jsp 方法 来进行操作
+        
+        
         
         /*if (article == null) {
             //如果 该 article 为 空 ， 那么 就会被 转移到404 页面
